@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "dbp": "apps/dbp",
+    "dbp-e2e": "apps/dbp-e2e"
+  }
+}
