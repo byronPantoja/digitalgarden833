@@ -1,21 +1,22 @@
+import Link from 'next/link';
+import { GetStaticProps } from 'next';
 import './about.module.css';
+import people from 'apps/dbp/data/PeopleData';
+export interface AboutProps {
+  name: string;
+  role: string;
+  bio: string;
+  twitterUrl: string;
+  linkedinUrl: string;
+}
 
-const people = [
-  {
-    name: 'Leslie Alexander',
-    role: 'Co-Founder / CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
-    twitterUrl: '#',
-    linkedinUrl: '#',
-  },
-  // More people...
-];
-/* eslint-disable-next-line */
-export interface AboutProps {}
-
-export function About(props: AboutProps) {
+export function About({
+  name,
+  role,
+  bio,
+  twitterUrl,
+  linkedinUrl,
+}: AboutProps) {
   return (
     <div className="bg-white">
       <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
@@ -101,8 +102,31 @@ export function About(props: AboutProps) {
           </div>
         </div>
       </div>
+      <div>
+        <button>
+          <Link href="/">Back</Link>
+        </button>
+      </div>
+      <div>
+        <button>
+          <Link href="/journal/test">test</Link>
+        </button>
+      </div>
     </div>
   );
 }
+
+/*
+- getStaticProps
+- getStaticPaths
+*/
+
+export const getStaticProps: GetStaticProps<AboutProps> = async (context) => {
+  return {
+    props: {
+      people,
+    },
+  };
+};
 
 export default About;
