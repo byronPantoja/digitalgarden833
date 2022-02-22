@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import './about.module.css';
-import people from 'apps/dbp/data/PeopleData';
+import people from '../../data/PeopleData';
 export interface AboutProps {
   name: string;
   role: string;
