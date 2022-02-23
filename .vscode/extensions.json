@@ -1,8 +1,13 @@
 {
   "recommendations": [
-    "nrwl.angular-console",
+    // Tailwind CSS Intellisense
+    "bradlc.vscode-tailwindcss",
     "esbenp.prettier-vscode",
-    "firsttris.vscode-jest-runner",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "aaron-bond.better-comments",
+
+    //nxworkspace
+    "nrwl.angular-console",
+    "firsttris.vscode-jest-runner"
   ]
 }
