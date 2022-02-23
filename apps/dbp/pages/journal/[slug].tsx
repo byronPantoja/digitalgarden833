@@ -8,11 +8,15 @@ import {
   renderMarkdown,
 } from '@digitalgarden833/markdown';
 import { MDXRemote } from 'next-mdx-remote';
-import SectionContainer from 'apps/dbp/components/SectionContainer';
-
+import SectionContainer from '../../components/SectionContainer';
+import { Youtube } from '@digitalgarden833/shared/mdx-elements';
 export interface JournalProps extends ParsedUrlQuery {
   slug: string;
 }
+
+const mdxElements = {
+  Youtube,
+};
 
 const POSTS_PATH = join(process.cwd(), '_journal833');
 
@@ -40,9 +44,9 @@ export function Journal({ frontMatter, html }) {
         className="pb-8 divide-y divide-gray-200 xl:divide-y-0 dark:divide-gray-700 "
         style={{ gridTemplateRows: 'auto 1fr' }}
       >
-        <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
+        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">
-            <MDXRemote {...html} />
+            <MDXRemote {...html} components={mdxElements} />
           </div>
         </div>
       </div>

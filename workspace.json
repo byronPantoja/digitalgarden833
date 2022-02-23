@@ -3,6 +3,7 @@
   "projects": {
     "dbp": "apps/dbp",
     "dbp-e2e": "apps/dbp-e2e",
-    "markdown": "libs/markdown"
+    "markdown": "libs/markdown",
+    "shared-mdx-elements": "libs/shared/mdx-elements"
   }
 }
